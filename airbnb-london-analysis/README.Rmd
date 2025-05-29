@@ -1,0 +1,82 @@
+
+# 📊 Airbnb Data Analysis and Price Prediction – London, UK (2022)
+
+## 🧾 Project Objective
+This project conducts exploratory data analysis and builds predictive models using Airbnb listing data from London (2022). The goal is to uncover key pricing factors and develop regression models to predict listing prices.
+
+## 🔍 Key Features
+- Exploratory data analysis (EDA)
+- Linear and multiple regression models
+- Visualization of trends and patterns
+- Identification of factors influencing Airbnb prices
+
+## 🧪 Technologies Used
+- R (tidyverse, plotly, corrplot, skimr)
+- Data.table, ggplot2, Hmisc
+- R Markdown for reporting
+
+## 📁 Project Structure
+
+airbnb-london-analysis/
+├── data/ # Dataset(s)
+├── scripts/ # R script (.R file)
+├── notebooks/ # R Markdown or analysis notebooks
+├── output/ # Visualizations or exported results
+└── README.md # Project documentation
+
+
+## 📈 Key Findings
+Room Type Dominance & Pricing:
+- "Entire home/apt" constitutes nearly 60% of listings and tends to have higher average prices than "private rooms". "Hotel room" has the highest per-night price, but the smallest share of total listings.
+
+Neighbourhood Trends:
+- Westminster has the most listings and, along with Kensington and Chelsea, features the highest average nightly prices. Certain neighbourhoods consistently outperform others in both price and activity.
+
+Statistical Significance in Price Differences:
+- There is a statistically significant difference in average prices between "entire home/apt" and "private room" listings (p < 0.001). Similarly, reviews per month differ significantly between key neighbourhoods (e.g., Westminster vs. Tower Hamlets).
+
+Correlation Insights:
+- Price has a very weak positive correlation with availability (r = 0.08), but this relationship is statistically significant.
+
+Regression Model Performance:
+- The first linear regression model (using variables like latitude, longitude, and number of reviews) explained very little price variance (R² ≈ 0.04).
+
+- A second model using log-transformed price, more features, and outlier filtering achieved much stronger results (R² ≈ 0.44, Adjusted R² ≈ 0.44, RMSE = 53.8 on the test set).
+
+- Location (longitude/latitude), room type, and neighbourhood are strong predictors of price.
+
+- Number of reviews and availability have smaller, but still significant, effects.
+
+Data Quality & Limitations:
+
+- Approximately 24% of review-related columns have missing values.
+
+- No information was available on proximity to transit or tourist attractions, which could further improve price prediction.
+
+## 🧠 Recommendations
+For Hosts:
+- Focus on optimizing room types and targeting high-demand neighbourhoods like Westminster and Kensington for greater revenue potential.
+- Maintaining high review counts and positive guest feedback may support better pricing, although the effect is modest.
+
+For Airbnb (Platform/Analysts):
+- Incorporate more granular neighbourhood and amenity data into price prediction tools.
+- Consider integrating external factors (like proximity to landmarks, transit, and events) to improve pricing models.
+- Use log transformation and outlier filtering for more robust predictive modeling.
+
+For Data Scientists/Analysts:
+- Apply log transformation on skewed variables and filter out outliers to improve regression model performance.
+- Expand future analyses to include external datasets (transport, tourism, seasonality) to capture additional price drivers.
+
+## 📌 How to Run
+1. Clone the repo:
+git clone https://github.com/yourusername/airbnb-london-analysis.git
+2. Open `Airbnb_Data_Analysis.R` or the `.Rmd` file in RStudio
+3. Install required packages (listed at the top of the script)
+4. Run the analysis step-by-step
+
+## 📚 Data Source
+Data obtained from http://insideairbnb.com/get-the-data
+
+## 🧑‍💼 Author
+Nana Osei Fordwouh  
+[LinkedIn](https://www.linkedin.com/in/nana-osei-fordwouh-ca)  
